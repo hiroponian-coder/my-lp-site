@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鳩の魅力を伝えるサイト - Peaceful Pigeon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F8F9FA;
+            --accent-color: #A8C5DA;
+            --sub-accent: #E8A0BF;
+            --text-color: #4A4A4A;
+        }
+        body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        h1 {
+            color: var(--accent-color);
+            margin: 0;
+            font-size: 2rem;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 0;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .hero-text h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--sub-accent);
+        }
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .features {
+            background-color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--accent-color);
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--sub-accent);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .gallery {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 10px;
+            transition: opacity 0.3s;
+        }
+        .gallery-grid img:hover {
+            opacity: 0.8;
+        }
+        footer {
+            background-color: var(--accent-color);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🕊️ Peaceful Pigeon</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero-text">
+                        <h2>街のアイドル、<br>ここにあり。</h2>
+                        <p>日常の風景に溶け込む平和の象徴。<br>その愛らしい仕草と独特のリズムに、<br>あなたはもう夢中になるはず。</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://placehold.co/600x400/A8C5DA/white?text=Poppo" alt="かわいい鳩のイラスト">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">鳩の推しポイント</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon">🚶‍♂️</div>
+                        <h3>独特のウォーキング</h3>
+                        <p>首を前後に振りながら歩くその姿は、まるでリズムを刻んでいるかのよう。見ているだけで心が和みます。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🌈</div>
+                        <h3>首元のオーロラ</h3>
+                        <p>ただのグレーではありません。光の当たり方で紫や緑に輝く首元の羽は、自然が生んだ芸術品です。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🤝</div>
+                        <h3>平和のシンボル</h3>
+                        <p>古くから平和の象徴として愛されてきました。公園で群れる姿は、争いのない世界を体現しています。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="container">
+                <h2 class="section-title">鳩ギャラリー</h2>
+                <div class="gallery-grid">
+                    <img src="https://placehold.co/400x300/E8A0BF/white?text=Eating" alt="食事中の鳩">
+                    <img src="https://placehold.co/400x300/A8C5DA/white?text=Flying" alt="飛んでいる鳩">
+                    <img src="https://placehold.co/400x300/F0E68C/black?text=Sleeping" alt="休憩中の鳩">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Peaceful Pigeon Project. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
