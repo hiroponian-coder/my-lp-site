@@ -40,8 +40,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* Hero background using Wikimedia Commons high-quality image */
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1544606708-412e8b2b7352?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Pigeon_portrait_4861.jpg/1600px-Pigeon_portrait_4861.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -132,7 +133,7 @@
         </div>
     </section>
 
-    <!-- Gallery Section (Masonry-like) -->
+    <!-- Gallery Section -->
     <section id="gallery" class="py-24">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
@@ -141,38 +142,44 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Image 1: Flying -->
                 <div class="group relative overflow-hidden rounded-xl shadow-lg h-64" data-aos="zoom-in">
-                    <img src="https://images.unsplash.com/photo-1549608276-5786777e6587?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Flying Pigeon" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/FLYING_PIGEON.jpg" alt="Flying Pigeon" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <p class="text-white font-bold text-lg">大空への飛翔</p>
                     </div>
                 </div>
+                <!-- Image 2: White Pigeon (Using reliable Unsplash ID found in search) -->
                 <div class="group relative overflow-hidden rounded-xl shadow-lg h-64" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1627931653303-34e2c658f80c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="White Pigeon" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Pigeon_white.jpg/800px-Pigeon_white.jpg" alt="White Pigeon" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <p class="text-white font-bold text-lg">純白のシンボル</p>
                     </div>
                 </div>
+                <!-- Image 3: Group/Eating -->
                 <div class="group relative overflow-hidden rounded-xl shadow-lg h-64" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1574362788390-50d4d2918804?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Group of Pigeons" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Pigeons_eating.JPG/800px-Pigeons_eating.JPG" alt="Group of Pigeons" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <p class="text-white font-bold text-lg">仲良しグループ</p>
+                        <p class="text-white font-bold text-lg">仲良しランチタイム</p>
                     </div>
                 </div>
+                 <!-- Image 4: Close Up -->
                  <div class="group relative overflow-hidden rounded-xl shadow-lg h-64" data-aos="zoom-in">
-                    <img src="https://images.unsplash.com/photo-1627931652431-7b7f14b3064e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Close up" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Close_up_of_a_pigeon.jpg" alt="Close up" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <p class="text-white font-bold text-lg">つぶらな瞳</p>
                     </div>
                 </div>
+                 <!-- Image 5: Sleeping/Resting -->
                  <div class="group relative overflow-hidden rounded-xl shadow-lg h-64" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1520633842491-91a59051052f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pigeon in city" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Pigeon_resting.jpg/800px-Pigeon_resting.jpg" alt="Pigeon resting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <p class="text-white font-bold text-lg">都会の賢者</p>
+                        <p class="text-white font-bold text-lg">ひと休み</p>
                     </div>
                 </div>
+                 <!-- Image 6: Baby Pigeon -->
                  <div class="group relative overflow-hidden rounded-xl shadow-lg h-64" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1596791931342-9f3792033575?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Baby pigeon" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Babypigeon.jpg" alt="Baby pigeon" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <p class="text-white font-bold text-lg">小さな冒険者</p>
                     </div>
