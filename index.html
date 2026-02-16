@@ -1,198 +1,231 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鳩の魅力を伝えるサイト - Peaceful Pigeon</title>
+    <title>Peaceful Pigeon | 鳩の魅力を再発見</title>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        display: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#E0F2F1',
+                            DEFAULT: '#26A69A',
+                            dark: '#00695C',
+                        },
+                        accent: '#FF7043',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        :root {
-            --bg-color: #F8F9FA;
-            --accent-color: #A8C5DA;
-            --sub-accent: #E8A0BF;
-            --text-color: #4A4A4A;
-        }
-        body {
-            font-family: 'M PLUS Rounded 1c', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        h1 {
-            color: var(--accent-color);
-            margin: 0;
-            font-size: 2rem;
-        }
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 60px 0;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-        .hero-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        .hero-text h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            color: var(--sub-accent);
-        }
-        .hero-image {
-            flex: 1;
-            min-width: 300px;
-        }
-        .hero-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .features {
-            background-color: #fff;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: var(--accent-color);
-            position: relative;
-            display: inline-block;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--sub-accent);
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .feature-card {
-            padding: 20px;
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        .icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-        .gallery {
-            padding: 60px 0;
-            text-align: center;
-        }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .gallery-grid img {
-            width: 100%;
-            border-radius: 10px;
-            transition: opacity 0.3s;
-        }
-        .gallery-grid img:hover {
-            opacity: 0.8;
-        }
-        footer {
-            background-color: var(--accent-color);
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1544606708-412e8b2b7352?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1>🕊️ Peaceful Pigeon</h1>
+<body class="text-gray-800 antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-sm shadow-sm" id="header">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display font-bold text-2xl text-brand-dark flex items-center gap-2">
+                <i class="fa-solid fa-dove"></i> Peaceful Pigeon
+            </a>
+            <nav class="hidden md:flex gap-8 font-medium text-gray-600">
+                <a href="#about" class="hover:text-brand transition-colors">魅力について</a>
+                <a href="#gallery" class="hover:text-brand transition-colors">ギャラリー</a>
+                <a href="#community" class="hover:text-brand transition-colors">コミュニティ</a>
+            </nav>
+            <a href="#join" class="hidden md:inline-block bg-brand hover:bg-brand-dark text-white px-6 py-2 rounded-full font-bold transition-transform hover:scale-105 shadow-lg">
+                ファンになる
+            </a>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero">
-                    <div class="hero-text">
-                        <h2>街のアイドル、<br>ここにあり。</h2>
-                        <p>日常の風景に溶け込む平和の象徴。<br>その愛らしい仕草と独特のリズムに、<br>あなたはもう夢中になるはず。</p>
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center hero-bg text-white">
+        <div class="container mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="font-display font-bold text-5xl md:text-7xl mb-6 leading-tight drop-shadow-lg">
+                街のアイドル、<br>ここにあり。
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-light drop-shadow-md">
+                日常の風景に溶け込む平和の象徴。<br>その愛らしい仕草と独特のリズムに、あなたはもう夢中になる。
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#about" class="bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-transform hover:scale-105 shadow-xl flex items-center justify-center gap-2">
+                    魅力を知る <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-0 w-full text-center animate-bounce">
+            <i class="fa-solid fa-chevron-down text-3xl text-white opacity-80"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="about" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display font-bold text-4xl text-brand-dark mb-4">鳩の推しポイント</h2>
+                <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600">ただの鳥ではありません。彼らにはこんなにも魅力が。</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 border-b-4 border-brand" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center text-brand mb-6 text-3xl mx-auto">
+                        <i class="fa-solid fa-person-walking"></i>
                     </div>
-                    <div class="hero-image">
-                        <img src="https://placehold.co/600x400/A8C5DA/white?text=Poppo" alt="かわいい鳩のイラスト">
+                    <h3 class="text-xl font-bold text-center mb-4">独特のウォーキング</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        「首振り歩行」と呼ばれるその動きは、視覚情報を安定させるための高度な技術。リズミカルに街を闊歩する姿は、見ているだけで心を和ませてくれます。
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 border-b-4 border-brand" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center text-brand mb-6 text-3xl mx-auto">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">首元のオーロラ</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        ただのグレーではありません。光の当たり方で鮮やかな紫や緑に輝く首元の羽（構造色）は、まさに自然が生んだ芸術品です。
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 border-b-4 border-brand" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-brand-light rounded-full flex items-center justify-center text-brand mb-6 text-3xl mx-auto">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-4">平和のシンボル</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        古くから平和の象徴として愛されてきました。公園で群れ、人々と共存する姿は、争いのない穏やかな世界を体現しています。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Masonry-like) -->
+    <section id="gallery" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display font-bold text-4xl text-brand-dark mb-4">鳩ギャラリー</h2>
+                <div class="w-16 h-1 bg-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64" data-aos="zoom-in">
+                    <img src="https://images.unsplash.com/photo-1549608276-5786777e6587?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Flying Pigeon" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg">大空への飛翔</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1627931653303-34e2c658f80c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="White Pigeon" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg">純白のシンボル</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl shadow-lg h-64" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1574362788390-50d4d2918804?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Group of Pigeons" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg">仲良しグループ</p>
+                    </div>
+                </div>
+                 <div class="group relative overflow-hidden rounded-xl shadow-lg h-64" data-aos="zoom-in">
+                    <img src="https://images.unsplash.com/photo-1627931652431-7b7f14b3064e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Close up" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg">つぶらな瞳</p>
+                    </div>
+                </div>
+                 <div class="group relative overflow-hidden rounded-xl shadow-lg h-64" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1520633842491-91a59051052f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pigeon in city" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg">都会の賢者</p>
+                    </div>
+                </div>
+                 <div class="group relative overflow-hidden rounded-xl shadow-lg h-64" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1596791931342-9f3792033575?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Baby pigeon" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <p class="text-white font-bold text-lg">小さな冒険者</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="features">
-            <div class="container">
-                <h2 class="section-title">鳩の推しポイント</h2>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="icon">🚶‍♂️</div>
-                        <h3>独特のウォーキング</h3>
-                        <p>首を前後に振りながら歩くその姿は、まるでリズムを刻んでいるかのよう。見ているだけで心が和みます。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">🌈</div>
-                        <h3>首元のオーロラ</h3>
-                        <p>ただのグレーではありません。光の当たり方で紫や緑に輝く首元の羽は、自然が生んだ芸術品です。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">🤝</div>
-                        <h3>平和のシンボル</h3>
-                        <p>古くから平和の象徴として愛されてきました。公園で群れる姿は、争いのない世界を体現しています。</p>
-                    </div>
+    <!-- CTA Section -->
+    <section id="join" class="py-24 bg-brand-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="container mx-auto px-6 text-center relative z-10" data-aos="fade-up">
+            <h2 class="font-display font-bold text-4xl mb-6">鳩ライフ、始めませんか？</h2>
+            <p class="text-xl text-brand-light mb-10 max-w-2xl mx-auto">
+                身近な幸せは、足元にあります。まずは公園で、彼らを観察してみることから始めましょう。
+            </p>
+            <a href="#" class="inline-block bg-white text-brand-dark px-10 py-4 rounded-full font-bold text-lg transition-transform hover:scale-105 shadow-xl">
+                観察スポットを探す
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="font-display font-bold text-2xl text-white flex items-center gap-2">
+                        <i class="fa-solid fa-dove"></i> Peaceful Pigeon
+                    </a>
+                    <p class="mt-2 text-sm">Every pigeon deserves a coo.</p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
                 </div>
             </div>
-        </section>
-
-        <section class="gallery">
-            <div class="container">
-                <h2 class="section-title">鳩ギャラリー</h2>
-                <div class="gallery-grid">
-                    <img src="https://placehold.co/400x300/E8A0BF/white?text=Eating" alt="食事中の鳩">
-                    <img src="https://placehold.co/400x300/A8C5DA/white?text=Flying" alt="飛んでいる鳩">
-                    <img src="https://placehold.co/400x300/F0E68C/black?text=Sleeping" alt="休憩中の鳩">
-                </div>
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-sm">
+                &copy; 2026 Peaceful Pigeon Project. All rights reserved.
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Peaceful Pigeon Project. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+    </script>
 </body>
 </html>
